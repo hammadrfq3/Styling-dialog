@@ -71,7 +71,7 @@ publishing {
         create<MavenPublication>("maven") {
             groupId = "com.github.hammadrfq3"
             artifactId = "Styling-dialog-compose"
-            version = "1.1"
+            version = "1.2"
 
            // from(components["java"])
         }
