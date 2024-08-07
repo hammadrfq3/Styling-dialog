@@ -7,6 +7,11 @@ plugins {
 android {
     publishing {
         singleVariant("release") {
+            withJavadocJar()
+            withSourcesJar()
+        }
+        singleVariant("debug") {
+            withJavadocJar()
             withSourcesJar()
         }
     }
