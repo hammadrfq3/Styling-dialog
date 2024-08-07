@@ -5,6 +5,11 @@ plugins {
 }
 
 android {
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+        }
+    }
     namespace = "comcustom.dialog"
     compileSdk = 34
 
@@ -68,12 +73,23 @@ dependencies {
 
 publishing {
     publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.hammadrfq3"
+            artifactId = "Styling-dialog-compose"
+            version = "1.3"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
+    /*publications {
         create<MavenPublication>("maven") {
             groupId = "com.github.hammadrfq3"
             artifactId = "Styling-dialog-compose"
             version = "1.2"
 
-           // from(components["java"])
+            from(components["release"])
         }
-    }
+    }*/
 }
