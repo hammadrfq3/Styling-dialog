@@ -81,7 +81,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.hammadrfq3"
             artifactId = "Styling-dialog-compose"
-            version = "1.3"
+            version = "1.0"
 
             afterEvaluate {
                 from(components["release"])
