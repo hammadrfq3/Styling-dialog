@@ -78,13 +78,25 @@ dependencies {
 
 publishing {
     publications {
-        register<MavenPublication>("release") {
+        /*register<MavenPublication>("release") {
             groupId = "com.github.hammadrfq3"
             artifactId = "Styling-dialog-compose"
             version = "1.0"
 
             afterEvaluate {
                 from(components["release"])
+            }
+        }*/
+        create<MavenPublication>("release") {
+            groupId = "com.github.hammadrfq3"
+            artifactId = "Styling-dialog-compose"
+            version = "1.0"
+
+            afterEvaluate {
+                from(components["release"])
+                artifact("$buildDir/outputs/aar/${project.name}-debug.aar") {
+                    classifier = "debug"
+                }
             }
         }
     }
